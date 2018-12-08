@@ -4,7 +4,7 @@
     <div class="content">
       <div class="box1">
         <img
-          src="../assets/photo.png"
+          :src="user.avatar"
           style="height:200px;width:200px;margin-left:10%;margin-top:10%;"
         >
       </div>
@@ -54,7 +54,7 @@ export default {
       this.$emit("close");
     },
     async modify() {
-      // this.selectedUser = this.thisPage[index];
+     
       if (this.password.trim() !== "" && this.balance.trim() !== "") {
         const result = await this.axios({
           method: "put",

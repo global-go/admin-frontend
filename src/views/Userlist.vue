@@ -24,7 +24,8 @@
         <td v-if="user.type==='sysAdmin'">系统管理员</td>
         <td v-else-if="user.type==='admin'" class="click" @click="modifyAdminType(index)">取消管理员</td>
         <td v-else class="click" @click="modifyUserType(index)">设置管理员</td>
-        <td class="click" @click="deleteUser(index)">删除</td>
+        <td v-if="user.type==='sysAdmin'" >不可操作</td>
+        <td v-else class="click" @click="deleteUser(index)">删除</td>
       </tr>
     </table>
     <ChangePage
